@@ -1,0 +1,31 @@
+{
+  "entry": "src/index.js",
+  "disableCSSModules": false,
+  "publicPath": "/",
+  "autoprefixer": null,
+  "proxy": {
+    "/api": {
+      "target": "https://www.easy-mock.com/mock/59015867875d7232a38b393c/api/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  },
+  "extraBabelPlugins": [
+    "recharts",
+    "transform-runtime",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    }
+  }
+}
